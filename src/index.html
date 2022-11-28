@@ -32,44 +32,45 @@
     <h1>Sortin cards, metodos de Ordenamiento</h1>
 
     <section class="section container" id="botones">
-      <div class="w-100 mb-5">
+      <div class="mb-5 d-flex justify-content-center">
         <div>
-          <label
-            for="inputUsuario"
-            class="label"
-            style="
-            justify-content:
-            end"
-            >Ingrese el número de cartas que desea desplegar
-          </label>
-        </div>
+          <div>
+            <label
+              for="inputUsuario"
+              class="label"
+              style="
+              justify-content:
+              end"
+              >Ingrese el número de cartas que desea desplegar
+            </label>
+          </div>
 
-        <div>
-          <input
-            type="text"
-            name=""
-            id="inputUsuario"
-            class="input d-block"
-            value=""
-            style="font-size: larger; text-align: center;"
-          />
+          <div class="mb-5 ">
+            <input
+              type="text"
+              name=""
+              id="inputUsuario"
+              class="input"
+              value=""
+              style="font-size: larger; text-align: center;"
+            />
+          </div>
+          <button class="btn1" id="btnGenCarta">
+            <span>Generar Cartas</span>
+            <svg viewBox="0 0 13 10" height="10px" width="1px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
+          <button class="btn1 mb-5" id="btnClasCarta">
+            <span>Ordenar Cartas</span>
+            <svg viewBox="0 0 13 10" height="10px" width="1px">
+              <path d="M1,5 L11,5"></path>
+              <polyline points="8 1 12 5 8 9"></polyline>
+            </svg>
+          </button>
         </div>
       </div>
-
-      <button class="btn1" id="btnGenCarta">
-        <span>Generar Cartas</span>
-        <svg viewBox="0 0 13 10" height="10px" width="1px">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
-      <button class="btn1 mb-5" id="btnClasCarta">
-        <span>Ordenar Cartas</span>
-        <svg viewBox="0 0 13 10" height="10px" width="1px">
-          <path d="M1,5 L11,5"></path>
-          <polyline points="8 1 12 5 8 9"></polyline>
-        </svg>
-      </button>
     </section>
     <div class="d-flex justify-content-center align-items-center flex-column">
       <section class="section section-generar" id="sec-generar"></section>
