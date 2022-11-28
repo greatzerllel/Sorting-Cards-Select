@@ -1,9 +1,11 @@
-const digito = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+const digitos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 const pintas = ["♥", "♦", "♠ ", "♠"];
-let i = "";
+
 let arrCartas = [];
 
 let newObject = {};
+
+let i = "";
 
 const inputUsuario = () => {
   let input = document.getElementById("inputUsuario");
@@ -26,7 +28,7 @@ function dibujarCarta() {
   let contenedorCarta = document.createElement("div");
 
   for (i = 0; i < inputUsuario(); i++) {
-    let sortNumbers = digito[Math.floor(Math.random() * 13)];
+    let sortNumbers = digitos[Math.floor(Math.random() * 13)];
     let sortPintas = pintas[Math.floor(Math.random() * 4)];
 
     let color = sortPintas === "♥" || sortPintas === "♦" ? "red" : "black";
@@ -45,8 +47,7 @@ function dibujarCarta() {
     divPinta.style.color = color;
     divPinta2.style.color = color;
 
-    divNumero.innerHTML = cambiarValor(objCarta.numero);
-
+    divNumero.innerHTML = cambiarDigito(objCarta.numero);
     divPinta.innerHTML = objCarta.pinta;
     divPinta2.innerHTML = objCarta.pinta;
 
@@ -59,11 +60,12 @@ function dibujarCarta() {
     nuevaCarta.append(divNumero, divPinta, divPinta2);
     contenedorCarta.appendChild(nuevaCarta);
   }
+
   seccionCarta.append(contenedorCarta);
 }
 
-function cambiarValor(digit) {
-  switch (digit) {
+function cambiarDigito(digito) {
+  switch (digito) {
     case 1:
       return "A";
     case 10:
@@ -75,7 +77,7 @@ function cambiarValor(digit) {
     case 13:
       return "K";
     default:
-      return digit;
+      return digito;
   }
 }
 
@@ -84,30 +86,27 @@ let secAlgoritmo = document.getElementById("sec-algoritmo");
 let botonOrdenar = document.getElementById("btnClasCarta");
 botonOrdenar.addEventListener("click", () => {
   secAlgoritmo.innerHTML = "";
-  bubbleSort(arrCartas);
+  selectSort(arrCartas);
 });
 
-const bubbleSort = arr => {
-  let wall = arr.length - 1;
-  while (wall > 0) {
-    let index = 0;
-    while (index < wall) {
-      if (arr[index].numero > arr[index + 1].numero) {
-        let aux = arr[index];
-        arr[index] = arr[index + 1];
-        arr[index + 1] = aux;
+function selectSort(arr) {
+  let min = 0;
+  while (min < arr.length - 1) {
+    for (let i = min + 1; i < arr.length; i++) {
+      if (arr[min].numero > arr[i].numero) {
+        let aux = arr[min];
+        arr[min] = arr[i];
+        arr[i] = aux;
       }
-      index++;
     }
-    wall--;
+    min++;
     dibujarCartaOrdenadas(arr);
   }
   return arr;
-};
+}
 
 function dibujarCartaOrdenadas(arr) {
   let contenedorCarta = document.createElement("div");
-
   for (i = 0; i < arr.length; i++) {
     contenedorCarta.classList.add("section-cartas2");
 
@@ -125,8 +124,7 @@ function dibujarCartaOrdenadas(arr) {
     divPinta.style.color = color;
     divPinta2.style.color = color;
 
-    divNumero.innerHTML = cambiarValor(arr[i].numero);
-
+    divNumero.innerHTML = cambiarDigito(arr[i].numero);
     divPinta.innerHTML = arr[i].pinta;
     divPinta2.innerHTML = arr[i].pinta;
 
@@ -135,6 +133,5 @@ function dibujarCartaOrdenadas(arr) {
   }
 
   secAlgoritmo.append(contenedorCarta);
-
   return arr;
 }
