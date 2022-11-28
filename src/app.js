@@ -34,7 +34,7 @@ function dibujarCarta() {
     let objCarta = {};
 
     objCarta.numero = sortNumbers;
-    objCarta.tipo = sortPintas;
+    objCarta.pinta = sortPintas;
     arrCartas.push(objCarta);
 
     let nuevaCarta = document.createElement("div");
@@ -47,14 +47,14 @@ function dibujarCarta() {
 
     divNumero.innerHTML = cambiarValor(objCarta.numero);
 
-    divPinta.innerHTML = objCarta.tipo;
-    divPinta2.innerHTML = objCarta.tipo;
+    divPinta.innerHTML = objCarta.pinta;
+    divPinta2.innerHTML = objCarta.pinta;
 
     contenedorCarta.classList.add("section-cartas");
     nuevaCarta.classList.add("carta");
     divNumero.classList.add("carta-numeros");
-    divPinta.classList.add("tipo-arriba");
-    divPinta2.classList.add("tipo-abajo");
+    divPinta.classList.add("pinta-arriba");
+    divPinta2.classList.add("pinta-abajo");
 
     nuevaCarta.append(divNumero, divPinta, divPinta2);
     contenedorCarta.appendChild(nuevaCarta);
@@ -118,17 +118,17 @@ function dibujarCartaOrdenadas(arr) {
 
     nuevaCarta.classList.add("carta");
     divNumero.classList.add("carta-numeros");
-    divPinta.classList.add("tipo-arriba");
-    divPinta2.classList.add("tipo-abajo");
+    divPinta.classList.add("pinta-arriba");
+    divPinta2.classList.add("pinta-abajo");
 
-    let color = arr[i].tipo === "♥" || arr[i].tipo === "♦" ? "red" : "black";
+    let color = arr[i].pinta === "♥" || arr[i].pinta === "♦" ? "red" : "black";
     divPinta.style.color = color;
     divPinta2.style.color = color;
 
     divNumero.innerHTML = cambiarValor(arr[i].numero);
 
-    divPinta.innerHTML = arr[i].tipo;
-    divPinta2.innerHTML = arr[i].tipo;
+    divPinta.innerHTML = arr[i].pinta;
+    divPinta2.innerHTML = arr[i].pinta;
 
     nuevaCarta.append(divNumero, divPinta, divPinta2);
     contenedorCarta.appendChild(nuevaCarta);
