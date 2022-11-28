@@ -8,6 +8,7 @@
 }
 body {
   font-family: "Roboto", sans-serif;
+  background-color: #3c3e40;
 }
 
 h1 {
@@ -87,10 +88,88 @@ h1 {
 .label {
   align-self: center;
   text-align: right;
+  color:#ccc;
 }
 
+.btn1 {
+    padding: 0.9em 1.6em;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 17px;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 12px;
+   }
+   
+   .btn1::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(46, 46, 46);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+   }
+   /* glow */
+   .btn1::before {
+    content: "";
+    background: linear-gradient(
+       45deg,
+       #FF0000, #002BFF, #FF00C8, #002BFF,
+         #FF0000, #002BFF, #FF00C8, #002BFF
+   );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+   }
+   
+   @keyframes glowing {
+    0% {
+     background-position: 0 0;
+    }
+   
+    50% {
+     background-position: 400% 0;
+    }
+   
+    100% {
+     background-position: 0 0;
+    }
+   }
+   
+   /* hover */
+   .btn1:hover::before {
+    opacity: 1;
+    color: rgb(234, 234, 234)!important;
+   }
+   
+   .btn1:active:after {
+    background: transparent;
+   }
+   
+   .btn1:active {
+    color: rgb(234, 234, 234)!important;
+    font-weight: bold;
+   }
+
+
 /* From uiverse.io by @Zena4L */
-.cta {
+/* .cta {
   position: relative;
   padding: 12px 18px;
   transition: all 0.2s ease;
@@ -151,3 +230,4 @@ h1 {
   height: fit-content;
   width: 100%;
 }
+ */
