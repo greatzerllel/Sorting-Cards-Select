@@ -1,29 +1,64 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,200;0,300;1,400;1,600&family=Comic+Neue:ital,wght@0,300;1,300;1,700&family=Quicksand:wght@300;500;700&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Sorting cards with select</title>
   </head>
+
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
-      </div>
-    </div>
+    <h1>Metodos de Ordenamiento</h1>
+
+    <section class="section section-botones" id="botones">
+      <label
+        for="inputUsuario"
+        class="label"
+        style="color:  rgb(84, 83, 92); justify-content: end"
+        >Ingrese el número de cartas que desea desplegar</label
+      >
+      <input
+        type="text"
+        name=""
+        id="inputUsuario"
+        class="input"
+        value=""
+        style="font-size: larger; text-align: center;"
+      />
+      <button class="cta" id="btnGenCarta">
+        <span>Generar Cartas</span>
+        <svg viewBox="0 0 13 10" height="10px" width="1px">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+      <button class="cta" id="btnClasCarta">
+        <span>Ordenar Cartas</span>
+        <svg viewBox="0 0 13 10" height="10px" width="1px">
+          <path d="M1,5 L11,5"></path>
+          <polyline points="8 1 12 5 8 9"></polyline>
+        </svg>
+      </button>
+    </section>
+
+    <section class="section section-generar" id="sec-generar"></section>
+
+    <section class="section section-algoritmo" id="sec-algoritmo"></section>
+
+    <script src="app.js"></script>
   </body>
 </html>
